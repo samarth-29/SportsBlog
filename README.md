@@ -19,4 +19,5 @@ Here I have used mongoose which is going to be a different way to communicate wi
  
  3) run npm install
  4) npm install pug@2.0.0-beta --save
+ 5) install bootstrap in public folder byt typing this command: bower install bootstrap
  
