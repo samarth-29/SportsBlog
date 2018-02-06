@@ -8,6 +8,11 @@ const flash = require('connect-flash');
 const app = express();
 const port = 3000;
 
+const index = require('./routes/index');
+const articles = require('./routes/articles');
+const categories= require('./routes/categories');
+const manage = require('./routes/manage');
+
 //view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -47,9 +52,10 @@ app.use(expressValidator({
 }));
 
 
-app.get('/', (req, res, next) => {
-  res.send('Hello');
-});
+app.use('/', index);
+app.use('/articles', articles);
+app.use('/categories', categories);
+app.use('/manage', manage);
 
 
 app.listen(port, () => {
